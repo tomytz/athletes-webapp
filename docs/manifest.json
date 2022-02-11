@@ -2,7 +2,7 @@
   "dir": "ltr",
   "lang": "en",
   "name": "athletes-app",
-  "scope": "/",
+  "scope": "https://tomytz.github.io/athletes-webapp/",
   "display": "fullscreen",
   "start_url": "https://tomytz.github.io/athletes-webapp/",
   "short_name": "athletes-app",
