@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --output-path docs --base-href /athletes-webapp",
+    "build": "ng build --prod --output-path docs --base-href=/athletes-webapp/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
