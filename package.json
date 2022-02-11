@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://tomytz.github.io/athletes-webapp",
+  "homepage": "https://tomytz.github.io/athletes-webapp",
   "name": "athletes-app",
   "version": "0.0.0",
   "scripts": {
@@ -23,6 +23,7 @@
     "@angular/router": "~12.2.0",
     "@angular/service-worker": "~12.2.0",
     "bootstrap": "^5.1.3",
+    "http-server-spa": "^1.3.0",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
