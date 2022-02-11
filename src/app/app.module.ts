@@ -11,6 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSortModule,
     MatCardModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerImmediately'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
