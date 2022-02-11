@@ -1,0 +1,128 @@
+<section class="header">
+  <app-header></app-header>
+  <div class="row container-fluid" *ngIf="!isSportSelected">
+    <div class="col d-flex justify-content-center" *ngFor="let sport of sports">
+      <mat-card class="sport-card" (click)="selectSport()">
+        <h3>
+          {{ sport }}
+        </h3>
+      </mat-card>
+    </div>
+  </div>
+  <div class="table-wrapper" *ngIf="isSportSelected">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8 d-flex justify-content-center">
+        <h1>All time top sprinters in the world</h1>
+      </div>
+      <div class="col-1">
+        <button
+          (click)="changeLayout()"
+          style="height: 35px"
+          class="btn btn-primary"
+          id="script_request"
+          type="button"
+        >
+          Add <u>uomTrack.js</u>
+        </button>
+      </div>
+    </div>
+
+    <div class="row back-white p-2">
+      <div class="col d-flex justify-content-center align-items-center">
+        <mat-form-field appearance="fill">
+          <mat-label>Nationality</mat-label>
+          <mat-select
+            [formControl]="nationality"
+            multiple
+            (selectionChange)="filterByNationality($event)"
+          >
+            <mat-option
+              *ngFor="let nationality of nationalities"
+              [value]="nationality"
+              >{{ nationality }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <mat-checkbox
+          [(ngModel)]="showFirstAthletes"
+          (change)="showFirstThree($event)"
+          >Show first 3 athletes</mat-checkbox
+        >
+      </div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <mat-form-field appearance="fill">
+          <mat-label>Columns</mat-label>
+          <mat-select
+            [formControl]="columnsToDisplay"
+            multiple
+            (selectionChange)="removeColumns($event)"
+          >
+            <mat-option
+              *ngFor="let col of displayedColumnsForSelect"
+              [value]="col"
+              >{{ col }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 w-100"
+      matSort
+      matSortDisableClear
+      (matSortChange)="sortData($event)"
+    >
+      <ng-container
+        matColumnDef="{{ column }}"
+        *ngFor="let column of columns; let i = index"
+      >
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>
+          {{ displayedColumns[i] }}
+        </th>
+
+        <td mat-cell *matCellDef="let element">
+          <div [ngSwitch]="column">
+            <div *ngSwitchCase="'img'">
+              <img class="athlete-image" [src]="element[column]" alt="" />
+            </div>
+
+            <div *ngSwitchCase="'competitor'">
+              <a [href]="element[column].ref">
+                {{ element[column].title }}
+              </a>
+            </div>
+
+            <div *ngSwitchCase="'nat'">
+              <img class="tableflag" [src]="element[column].img" alt="" />
+              {{ element[column].title }}
+            </div>
+
+            <div *ngSwitchCase="'dob'">
+              {{ element[column] | date: "mediumDate" }}
+            </div>
+
+            <div *ngSwitchCase="'date'">
+              {{ element[column] | date: "mediumDate" }}
+            </div>
+
+            <div *ngSwitchDefault="">
+              {{ element[column] }}
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let element; columns: columns"
+        [ngClass]="{ trHover: changedLayout }"
+      ></tr>
+    </table>
+  </div>
+</section>

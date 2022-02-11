@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0%;
+  font-family: "Roboto", sans-serif;
+}
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url("/assets/images/Background_Running_Field.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+th.mat-header-cell {
+  text-align: center !important;
+}
+.mat-sort-header-container {
+  justify-content: center;
+  color: white;
+}
+
+button {
+  width: fit-content;
+  padding: 2%;
+  height: 100px;
+  background-color: #909af3;
+  font-size: 25px;
+  border-radius: 50%;
+  color: whitesmoke;
+  display: inline-block;
+  cursor: pointer;
+}
+
+p {
+  color: yellow;
+  font-style: italic;
+  font-size: large;
+  position: relative;
+  right: 30px;
+}
+
+input {
+  background-color: pink;
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.table-wrapper {
+  text-align: center;
+  padding: 5%;
+}
+
+h1 {
+  color: white;
+  font-size: x-large;
+  margin-bottom: 0.5em;
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+  position: relative;
+  overflow-x: auto;
+  padding: 15%;
+}
+th {
+  background-color: #333;
+  color: aliceblue;
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
+}
+table tbody td {
+  font-style: italic;
+  text-align: center;
+}
+.athlete-image {
+  width: 100px;
+  height: 100px;
+}
+tr:nth-child(even) {
+  background-color: rgb(201, 199, 199);
+}
+tr:nth-child(odd) {
+  background-color: white;
+}
+.selected {
+  background-color: aqua;
+  font-weight: bold;
+  color: pink;
+}
+
+.back-white {
+  background-color: white;
+}
+
+.sport-card {
+  width: 225px;
+  height: 150px;
+  border-radius: 10px;
+  background-color: #ccc;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  table {
+    display: block;
+  }
+
+  .records_table > thead {
+    display: none;
+  }
+
+  .records_table,
+  .records_table tbody,
+  .records_table tr,
+  .records_table td {
+    display: block;
+    width: 100%;
+  }
+  .athlete-image {
+    width: 0px;
+    height: 0px;
+  }
+
+  .records_table td {
+    text-align: left;
+    padding-left: 1em;
+    margin-bottom: 0.25em;
+    position: relative;
+    line-height: 1.2;
+    color: #232323;
+    margin-bottom: 0.5em;
+  }
+
+  table tbody tr td:before {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.2;
+    font-weight: unset;
+    position: absolute;
+    width: 40%;
+    left: 30px;
+    top: 0;
+  }
+
+  table tbody tr td {
+    padding-left: 40% !important;
+    margin-bottom: 24px;
+  }
+
+  table tbody tr td:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+    margin-bottom: 1.25em;
+  }
+
+  table tbody tr td:nth-child(2):before {
+    content: "Rank";
+  }
+  table tbody tr td:nth-child(3):before {
+    content: "Personal Best";
+  }
+  table tbody tr td:nth-child(4):before {
+    content: "WIND";
+  }
+  table tbody tr td:nth-child(5):before {
+    content: "Competitor";
+  }
+  table tbody tr td:nth-child(6):before {
+    content: "DOB";
+  }
+  table tbody tr td:nth-child(7):before {
+    content: "Nat";
+  }
+  table tbody tr td:nth-child(8):before {
+    content: "Pos";
+  }
+  table tbody tr td:nth-child(9):before {
+    content: "Venue";
+  }
+  table tbody tr td:nth-child(10):before {
+    content: "Date";
+  }
+  table tbody tr td:nth-child(11):before {
+    content: "Results Score";
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  .records_table > thead {
+    display: none;
+  }
+
+  table {
+    display: block;
+  }
+
+  .records_table,
+  .records_table tbody,
+  .records_table tr,
+  .records_table td {
+    display: block;
+    width: 100%;
+  }
+
+  .records_table td {
+    text-align: left;
+    padding-left: 1em;
+    margin-bottom: 0.25em;
+    position: relative;
+    line-height: 1.2;
+    color: #232323;
+    margin-bottom: 0.5em;
+  }
+
+  table tbody tr td:before {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.2;
+    font-weight: unset;
+    position: absolute;
+    width: 40%;
+    left: 30px;
+    top: 0;
+  }
+
+  table tbody tr td {
+    padding-left: 40% !important;
+    margin-bottom: 24px;
+  }
+
+  table tbody tr td:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+    margin-bottom: 1.25em;
+  }
+
+  .athlete-image {
+    border-radius: 10em;
+    width: 30%;
+    position: absolute;
+    right: 1em;
+    top: 2em;
+  }
+  table tbody tr td:nth-child(2):before {
+    content: "Rank";
+  }
+  table tbody tr td:nth-child(3):before {
+    content: "Personal Best";
+  }
+  table tbody tr td:nth-child(4):before {
+    content: "WIND";
+  }
+  table tbody tr td:nth-child(5):before {
+    content: "Competitor";
+  }
+  table tbody tr td:nth-child(6):before {
+    content: "DOB";
+  }
+  table tbody tr td:nth-child(7):before {
+    content: "Nat";
+  }
+  table tbody tr td:nth-child(8):before {
+    content: "Pos";
+  }
+  table tbody tr td:nth-child(9):before {
+    content: "Venue";
+  }
+  table tbody tr td:nth-child(10):before {
+    content: "Date";
+  }
+  table tbody tr td:nth-child(11):before {
+    content: "Results Score";
+  }
+}
