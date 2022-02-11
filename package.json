@@ -1,11 +1,11 @@
 {
-  "homepage" : "https://tomytz.github.io/",
+  "homepage" : "https://tomytz.github.io/athletes-webapp",
   "name": "athletes-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --baseHref=https://tomytz.github.io/athletes-webapp",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
