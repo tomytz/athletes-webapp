@@ -28,9 +28,9 @@ export class AthletesDataService {
 
   constructor(private httpService: HttpClient) {
     this.setData();
-    // Ενα χρειαστει συδνεση με το backend μπορουμε να χρησημοποιησουμε το httpService.get η httpService.post και να κανουμε set
+    // Εαν χρειαστεί σύνδεση με το backend μπορουμε να χρησημοποιησουμε το httpService.get η httpService.post και να κανουμε set
   }
-
+// Δημιουργία των δεδομένων του table
   setData(data?: any, columns?: string[]) {
     this.columns = columns ?? ['Img', 'Rank', 'Personal best', 'Wind', 'Competitor', 'DOB', 'Nat', 'Pos', 'Venue', 'Date', 'Results'];
     this.data = data ?? [

@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   onlyUnique(value: any, index: any, self: any) {
     return self.indexOf(value) === index;
   }
-
+//Function that shows the top three athletes
   showFirstThree(event: any) {
     if (event.checked) {
       this.dataSource = [...this._athletesDataService.data.slice(0, 3)];
@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
       this.dataSource = [...this._athletesDataService.data];
     }
   }
-
+//Function used that takes the value chosen in the event to filter the proper values
   filterByNationality(event: any) {
     const valueArray = event.value;
     if (valueArray?.length) {
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
       this.dataSource = [...this._athletesDataService.data];
     }
   }
-
+//Add function to choose the columns wanted to be present
   removeColumns(event: any) {
     const valueArray = event.value;
     if (valueArray?.length) {
@@ -107,7 +107,7 @@ export class AppComponent implements OnInit {
       this.displayedColumns = [...this._athletesDataService.columns];
     }
   }
-
+//Function to sort table data by pressing the header 
   sortData(sort: any) {
     const data = this.dataSource.slice();
     if (!sort.active || sort.direction === '') {
@@ -142,12 +142,12 @@ export class AppComponent implements OnInit {
       }
     });
   }
-
+//Function that saves in local storage the choice of the sport
   selectSport() {
     localStorage.setItem('isSportSelected', 'true');
     this.isSportSelected = true;
   }
-
+//Function that used for sorting in ascending and descending order
   compare(a: number | string, b: number | string, isAsc: boolean) {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
